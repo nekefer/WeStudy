@@ -1,0 +1,686 @@
+/* début du style de la page app.blade.php*/
+.haut{
+	position: fixed;
+    right: 0px;
+    bottom: 0px;
+    font-size: 40px;
+}
+.nom-app{
+    position: absolute;
+    font-weight: 500;
+    font-size:50px ;
+
+}
+.login-app{
+    position: absolute;
+    font-weight: 500;
+    font-size:35px ;
+    top: 18px;
+    left: 1000px;
+    border-right: 5px solid #999;
+    padding-right: 20px;
+}
+.register-app{
+    position: absolute;
+    font-weight: 500;
+    font-size:35px ;
+    top: 18px;
+    padding-left: 20px;
+    margin-left: 20px;
+    left: 1100px;
+}
+.head{
+	position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 90px;
+    box-shadow: 0 0 2px 0 ;
+}
+.user-logout{
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    width:120px;
+    right: 80px;
+    display:inline;
+}
+.i-profile{
+    position: relative;
+    display: inline;
+}
+.name-profile{
+    display: inline;
+}
+.profile-ap{
+    display: none;
+    width: 150px;
+    background-color:#fff;
+    z-index: 100;
+    border: 1px solid;
+    box-shadow: 2px 2px 5px ;
+    text-align: center;
+}
+.manager-compte{
+    font-size: 12px;
+    text-align: left;
+}
+.user-logout:hover .profile-ap {
+    display: block;
+}
+.menu{
+	position: fixed;
+	background-color: rgb(51, 51, 51);
+	border-radius: 10px;
+	width: 15%;
+	top: 190px;
+	height: 400px;
+	margin-top: 20px;
+	margin-left: 20px;
+	
+}
+#sub-menu{
+	position: relative;
+	text-align: center;
+	margin: 18px 0px;
+	font-size: 24px;
+}
+.search-form{
+	position: relative;
+	margin: 0px 500px;
+	top: 20px;
+	
+}
+.search{
+	position: relative;
+	text-align: center;
+	width: 250px;
+	height: 30px;
+	font-size: 20px;
+	border-radius: 10px;
+}
+.search-button{
+	position: relative;
+	border: none;
+	background: none;
+}
+
+.search-button > .fas{
+	font-size: 23px;
+}
+@media screen and (max-width: 1300px){
+    .login-app{
+        left: 800px;
+    }
+    .register-app{
+        left: 900px;
+    }
+
+}
+@media screen and (max-width: 1150px){
+        .login-app{
+
+            left: 500px;
+
+        }
+        .register-app{
+
+            left: 600px;
+        }
+}
+@media screen and (max-width: 785px){
+    .login-app{
+        left: 300px;
+
+    }
+    .register-app{
+        left: 400px;
+    }
+}
+@media screen and (max-width: 620px){
+    .login-app{
+        left: 200px;
+        font-size: medium;
+
+    }
+    .register-app{
+        left: 250px;
+        font-size: medium;
+    }
+    .nom-app{
+        font-size: large;
+    }
+    .head{
+        height: 70px;
+    }
+}
+/*fin du style de la page app.blade.php*/
+
+/*début du style de la page login.blade.php*/
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.wave{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+    padding: 0 2rem;
+}
+
+.img{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.login-content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+
+.img img{
+	width: 500px;
+}
+.form{
+	position: relative;
+	top: -60px;
+	width: 360px;
+}
+
+.login-content img{
+    height: 100px;
+}
+
+.login-content h2{
+	margin: 15px 0;
+	color: #333;
+	text-transform: uppercase;
+	font-size: 2.9rem;
+}
+
+.login-content .input-div{
+	position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+.login-content .input-div.one{
+	margin-top: 0;
+}
+.i{
+	color: #d9d9d9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.i i{
+	transition: .3s;
+}
+
+.input-div > div{
+    position: relative;
+	height: 45px;
+}
+
+.input-div > div > h5{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #999;
+	font-size: 18px;
+	transition: .3s;
+}
+
+.input-div:before, .input-div:after{
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: #38d39f;
+	transition: .4s;
+}
+
+.input-div:before{
+	right: 50%;
+}
+
+.input-div:after{
+	left: 50%;
+}
+
+.input-div.focus:before, .input-div.focus:after{
+	width: 50%;
+}
+
+.input-div.focus > div > h5{
+	top: -5px;
+	font-size: 15px;
+}
+
+.input-div.focus > .i > i{
+	color: #38d39f;
+}
+
+.input-div > div > input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	color: #555;
+	font-family: 'poppins', sans-serif;
+}
+
+.input-div.pass{
+	margin-bottom: 4px;
+}
+
+a{
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	color: #999;
+	font-size: 0.9rem;
+	transition: .3s;
+}
+
+a:hover{
+	color: #38d39f;
+}
+
+.btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: .5s;
+	margin-top: 50px ;
+	margin-bottom: 30px;
+}
+.btn:hover{
+	background-position: right;
+}
+.remember-forgot{
+	display: flex;
+
+}
+.remember{
+	margin-right: 55px;
+}
+.errors{
+	position: relative;
+	top: 50px;
+	color: red;
+	font-size: small;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1050px){
+	.container{
+		grid-gap: 5rem;
+	}
+}
+
+@media screen and (max-width: 1000px){
+	form{
+		width: 290px;
+	}
+
+	.login-content h2{
+        font-size: 2.4rem;
+        margin: 8px 0;
+	}
+
+	.img img{
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.container{
+		grid-template-columns: 1fr;
+	}
+
+	.img{
+		display: none;
+	}
+
+	.wave{
+		display: none;
+	}
+
+	.login-content{
+		justify-content: center;
+	}
+	.head{
+		display: flex;
+
+	}
+}
+/*fin du style de la page login.blade.php*/
+
+/*fin du style de la page register.blade.php*/
+.register-container{
+    position: relative;
+	top: 15px;
+}
+.register-container h2{
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+.register-container .btn.btn-primary{
+    margin: 20px 0;
+}
+/*fin du style de la page register.blade.php*/
+
+
+/*début du style de la page home.blade.php*/
+.container-home{
+    position: relative;
+    margin: 0 300px;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+	cursor: default;
+}
+.tweet{
+	border-bottom: 1px solid #333;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+.avatar-tweet{
+	width: 75px;
+	height: 75px;
+	border-radius: 50% 50%;
+}
+.new-tweet{
+	position: relative;
+	padding: 40px;
+	border-bottom: 1px solid #333 ;
+}
+.form-tweet{
+	width: 90%;
+	margin: auto;
+	display: flex;
+	align-content: center;
+}
+textarea{
+	resize: none;
+	border: 3px solid #333;
+	font-size: 20px;
+}
+#poster{ 
+	display: inline;
+	width: 120px;
+	position: relative;	
+	left: 500px;
+}
+#btnab{ 
+	display: inline;
+	width: 180px;
+	position: absolute;	
+	left: 500px;
+}
+.abonner{
+	display: inline;
+}
+.other-user{
+	display: inline;
+	cursor: pointer;
+}
+.noOther-user{
+	display: inline;
+}
+#like{
+	display: inline;
+	width: 100px;
+	margin: 10px 0;
+}
+.like, .unlike{
+	display: inline !important;
+	margin: 0px 10px;
+	
+}
+#btnlike{
+	display: inline;
+	width: 150px;
+	background-color: rgb(35, 91, 188);
+	background-image: none;
+}
+#btnunlike{
+	display: inline;
+	width: 150px;
+	background-color: rgba(198, 57, 57, 0.866);
+	background-image: none;
+}
+/*fin du style de la page home.blade.php*/
+
+/*début du style pour show.blade.php*/
+.container-profile{
+	position: relative;
+	top: 50px;
+	left: 300px;
+}
+.modifier-form{
+	position: relative;
+	display: inline;
+}
+.profile-head{
+	display: flex;
+}
+.profile_info{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-left: 20px;
+}
+.info>span{
+	margin: 0px 10px;
+}
+.bio{
+	margin: 20px 20px;
+}
+.profile-bio{
+	margin: 15px 0px 40px;
+}
+#leserreurs{
+	top: 0px;
+}
+.image_user{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+.posts{
+	width: 60%;
+	border: 3px solid #333;
+}
+.post{
+	border-top: 1px solid #333;
+	padding: 10px 25px;
+}
+.container-detail{
+	display: flex;
+	justify-content: space-between;
+}
+.container-detail button{
+	border: none;
+}
+.delete .fas{
+	font-size: 25px !important;
+}
+.delete >i:hover{
+	color: red ;
+}
+/*fin du style pour show.blade.php*/
+
+/*début du style pour ProfileOfOtherUser.blade.php*/
+
+.sub-head{
+	position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 90px;
+    box-shadow: 0 0 2px 0 ;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: #999;
+	z-index: 2;
+}
+#btnOtheruser{
+	position: absolute;
+	width: 200px;
+	display: inline;
+	cursor:pointer;
+	top: -40px;
+}
+.Otheruser{
+	display: inline;
+}
+.info{
+	color: #32be8f;
+}
+.far{
+	font-size: 50px;
+}
+.r{
+	right: 50px;
+}
+/*fin du style pour ProfileOfOtherUser.blade.php*/
+
+/*debut du style pour conversation.index.blade.php*/
+
+#lien-conversation{
+	position: relative;
+	text-align: center;
+	display: inline;
+	color: #fff;
+	padding: 20px;
+}
+.conversation{
+	margin-top: 50px ;
+	margin-left: 300px;
+}
+#btn-conversation{
+	display: inline;
+	width: 100%;
+}
+.user-conversation{
+	width:75%;
+	margin-left: 30px;
+}
+.username{
+	position: sticky;
+	background-color: #fff;
+	z-index: 5;
+	top: 0px;
+	position: -webkit-sticky;
+	width: 100%;
+	border-bottom: 1px solid #333;
+	text-align: center;
+}
+.msg{
+	position: relative;
+}
+.message{
+	position: relative;
+
+    left: 400px;
+	width:  600px;
+	height: 500px;
+	overflow-y: auto;
+	border: #333 solid 2px;
+}
+.text-user{
+	text-align: right;
+}
+#msg-envoyer{
+	display: inline;
+	width: 25%;
+	margin: 5px 10px;
+	position: relative;
+	top:-20px;
+}
+.envoyer{
+	margin-top: 10px;
+
+}
+.amis{
+	position: absolute;
+	overflow-y: auto;
+	width:  300px;
+	height: 500px;
+	border: 1px solid #333;
+}
+/*fin du style pour conversation.index.blade.php*/
+
+/*Commentaire*/
+.post-comment{
+	margin-top: 100px;
+	border-top: solid 2px #333;
+}
+.comment{
+	margin-top: 50px;
+	padding: 20px 40px ;
+	border-top: solid 1px #333;
+	border-bottom: solid 1px #333;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+#from-comment{
+	position: relative;
+	top:20px;
+}
+.user-comment{
+	text-align: right;
+}
+/* commentaire */
+
+/* notification */
+.hidden{
+	display: none;
+}
+/* fin notification */
