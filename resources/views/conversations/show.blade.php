@@ -24,7 +24,6 @@
             @endforeach
             <form class="envoyer" action="{{ route('conversation.store', [$user])}}" method="post">
                 @csrf
-                <textarea name="content" placeholder="Ecrivers votre message"></textarea>
                 <button id="msg-envoyer" class="btn btn-primary" type="submit">Envoyer</button>
             </form>
         </div>

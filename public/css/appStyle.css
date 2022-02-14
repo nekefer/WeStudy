@@ -1,9 +1,6 @@
 /* début du style de la page app.blade.php*/
 .haut{
-	position: fixed;
-    right: 0px;
-    bottom: 0px;
-    font-size: 40px;
+	
 }
 .nom-app{
     position: absolute;
